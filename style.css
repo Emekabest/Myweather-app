@@ -1,0 +1,112 @@
+* {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+}
+
+.weather-content {
+  background-image: url(./images/cloud.jpeg);
+  height: 100vh;
+  /* background-repeat: 1px; */
+  display: grid;
+  background-repeat: repeat;
+  place-items: center;
+}
+.weather-text {
+  display: grid;
+  place-items: center;
+
+  /* padding: 50px 0 0 550px; */
+}
+.weather-text h1 {
+  text-shadow: 2px 2px 5px #000;
+  font-family: cursive;
+  font-size: 30px;
+  color: aliceblue;
+}
+.search-city {
+  margin-top: 20px;
+  width: 300px;
+  height: 49px;
+  text-align: center;
+  border-radius: 49px;
+  border-style: unset;
+  outline: none;
+  box-shadow: 1px 4px 6px black;
+  font-size: 20px;
+}
+.getweather {
+  height: 40px;
+  width: 150px;
+  border-radius: 20px;
+  outline: none;
+}
+
+.result {
+  height: 200px;
+  width: 60vw;
+  background-color: rgba(0, 0, 0, 0.404);
+}
+.result h1 {
+  text-shadow: 2px 1px 3px black;
+  padding: 15px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+.result p {
+  font-weight: bold;
+  padding-top: 10px;
+  color: #fff;
+  font-size: 25px;
+  text-align: center;
+}
+.loader1 {
+  border: 16px solid #f3f3f3;
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  border-top: 16px solid rgb(105, 179, 214);
+  border-bottom: 16px solid rgb(105, 179, 214);
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+}
+
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+/* @keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+} */
+
+@media screen and (max-width: 524px) {
+  .weather-text h1 {
+    font-size: 20px;
+  }
+  .search-city {
+    width: 270px;
+    height: 40px;
+    font-size: 17px;
+  }
+
+  .loader1 {
+    border: 10px solid #f3f3f3;
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+    border-top: 10px solid rgb(105, 179, 214);
+    border-bottom: 10px solid rgb(105, 179, 214);
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+  }
+}
