@@ -84,10 +84,10 @@ const Btnclick = () => {
   // }
 };
 
-function response() {
-  return data.json();
-}
+// function response() {
+//   return data.json();
+// }
 
-function data(dataFile) {}
+// function data(dataFile) {}
 
-fetch(api).then(response).then(data);
+// fetch(api).then(response).then(data);
