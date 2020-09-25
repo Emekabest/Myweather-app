@@ -5,21 +5,24 @@
   text-decoration: none;
 }
 
-.weather-content {
+body {
   background-image: url(./images/fine\ weather.jfif);
   height: 100vh;
   /* background-repeat: 1px; */
   display: grid;
   background-repeat: repeat;
   place-items: center;
+  position: relative;
 }
-.weather-text {
+/* .weather-content {
+} */
+.weather-content-box {
   display: grid;
   place-items: center;
 
   /* padding: 50px 0 0 550px; */
 }
-.weather-text h1 {
+.weather-content-box h1 {
   text-shadow: 2px 2px 5px #000;
   font-family: cursive;
   font-size: 30px;
@@ -44,6 +47,8 @@
   width: 150px;
   border-radius: 20px;
   outline: none;
+  /* position: absolute;
+  bottom: 50%; */
 }
 
 .result {
@@ -83,6 +88,7 @@
     -webkit-transform: rotate(360deg);
   }
 }
+
 /* @keyframes spin {
   0% {
     transform: rotate(0deg);
@@ -93,9 +99,10 @@
 } */
 
 @media screen and (max-width: 540px) {
-  .weather-text h1 {
+  .weather-content-box h1 {
     font-size: 23px;
   }
+
   .search-city {
     width: 270px;
     height: 40px;
@@ -112,7 +119,9 @@
     -webkit-animation: spin 2s linear infinite;
     animation: spin 2s linear infinite;
   }
-  .weather-content {
+
+  body {
     background-size: 500px;
+    height: 100vh;
   }
 }
