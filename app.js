@@ -32,32 +32,33 @@ let desc_p = document.querySelector(".desc");
 const controlDiv_div = document.querySelector(".controlDiv");
 
 const Btnclick = () => {
-  controlDiv_div.innerHTML = `  <div class="loader1">
+  if (searchCity_input.value) {
+    controlDiv_div.innerHTML = `  <div class="loader1">
       </div>`;
 
-  const api =
-    "https://api.openweathermap.org/data/2.5/weather?q=" +
-    searchCity_input.value +
-    "&appid=e6e1137ed7a2b08c34421f77bd2ec5a1";
+    const api =
+      "https://api.openweathermap.org/data/2.5/weather?q=" +
+      searchCity_input.value +
+      "&appid=e6e1137ed7a2b08c34421f77bd2ec5a1";
 
-  fetch(api)
-    .then((response) => response.json())
-    .then((data) => {
-      console.log(data);
+    fetch(api)
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
 
-      const nameValue = data["name"];
+        const nameValue = data["name"];
 
-      console.log(nameValue);
+        console.log(nameValue);
 
-      const tempValue = data["main"]["temp"];
+        const tempValue = data["main"]["temp"];
 
-      console.log(tempValue);
+        console.log(tempValue);
 
-      const descValue = data["weather"]["0"]["description"];
+        const descValue = data["weather"]["0"]["description"];
 
-      console.log(descValue);
+        console.log(descValue);
 
-      controlDiv_div.innerHTML = ` <div class="result">
+        controlDiv_div.innerHTML = ` <div class="result">
 
             <h1 class="CityName">${nameValue}</h1>
 
@@ -66,22 +67,25 @@ const Btnclick = () => {
             <p class="desc">${descValue}</p>
 
           </div>`;
-    })
+      })
 
-    .catch((err) => {
-      // if (err.value.contains("e")) {
-      //   console.log("CORRECT");
-      // }
-      alert("Wrong city name!");
-      controlDiv_div.innerHTML = "";
-    });
+      .catch((err) => {
+        // if (err.value.contains("e")) {
+        //   console.log("CORRECT");
+        // }
+        alert("Wrong city name!");
+        controlDiv_div.innerHTML = "";
+      });
 
-  // let err = () => {};
+    // let err = () => {};
 
-  // const mainData = fetchData();
-  // if (mainData) {
-  //   console.log("active");
-  // }
+    // const mainData = fetchData();
+    // if (mainData) {
+    //   console.log("active");
+    // }
+  } else {
+    alert(`please enter a city`);
+  }
 };
 
 // function response() {
