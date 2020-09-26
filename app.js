@@ -27,14 +27,18 @@ let temp_p = document.querySelector(".temp");
 
 let desc_p = document.querySelector(".desc");
 
+const weatherInputForm_form = document.querySelector(".weather-input-form");
+
 // let resultBlock_div = document.querySelector(".resultBlock");
 
 const controlDiv_div = document.querySelector(".controlDiv");
 
-const Btnclick = () => {
+searchCity_input.focus();
+
+weatherInputForm_form.addEventListener("submit", (event) => {
+  event.preventDefault();
   if (searchCity_input.value) {
-    controlDiv_div.innerHTML = `  <div class="loader1">
-      </div>`;
+    controlDiv_div.innerHTML = `<div class = "pop"> <div class="pop1"></div></div> `;
 
     const api =
       "https://api.openweathermap.org/data/2.5/weather?q=" +
@@ -73,7 +77,12 @@ const Btnclick = () => {
         // if (err.value.contains("e")) {
         //   console.log("CORRECT");
         // }
-        alert("Wrong city name!");
+        const errorMsg = `Opps an error occured!
+        * Input a valid name 
+        * or try checking your internet connection
+        
+        `;
+        alert(errorMsg);
         controlDiv_div.innerHTML = "";
       });
 
@@ -86,7 +95,7 @@ const Btnclick = () => {
   } else {
     alert(`please enter a city`);
   }
-};
+});
 
 // function response() {
 //   return data.json();
