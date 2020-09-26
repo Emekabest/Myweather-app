@@ -178,7 +178,7 @@ body {
     font-size: 17px;
   }
 
-  .loader1 {
+  /* .loader1 {
     border: 10px solid #f3f3f3;
     height: 80px;
     width: 80px;
@@ -187,10 +187,45 @@ body {
     border-bottom: 10px solid rgb(105, 179, 214);
     -webkit-animation: spin 2s linear infinite;
     animation: spin 2s linear infinite;
+  } */
+  .pop1 {
+    -webkit-animation: 0.713s linear infinite;
+    animation: poping 0.713s infinite;
   }
 
   body {
     background-size: 500px;
     height: 100vh;
+  }
+
+  @-webkit-keyframes poping {
+    0% {
+      height: 2px;
+      width: 2px;
+      border: 1px solid #fff;
+      border-radius: 50%;
+    }
+
+    /* 10%{
+     
+    height: 4px;
+    width: 4px;
+    border: 3px solid #fff;
+    border-radius: 50%;
+  } */
+
+    50% {
+      height: 40px;
+      width: 40px;
+      border: 8px solid #fff;
+      border-radius: 50%;
+    }
+
+    100% {
+      height: 70px;
+      width: 70px;
+      border: 20px solid #fff;
+      border-radius: 50%;
+    }
   }
 }
